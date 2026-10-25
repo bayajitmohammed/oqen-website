@@ -1,0 +1,126 @@
+---
+const year = new Date().getUTCFullYear();
+const description = 'Oqen is an independent game studio making games worth getting lost in. Small team. Strange worlds. Something is in the making.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111210" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://oqen.org/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Oqen" />
+    <meta property="og:title" content="Oqen — Independent game studio" />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://oqen.org/" />
+    <meta name="twitter:card" content="summary" />
+    <title>Oqen — Independent game studio</title>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <span class="studio-label"><span class="symbol" aria-hidden="true">✳</span> Independent game studio</span>
+        <span class="edition">Oqen / 001</span>
+      </header>
+
+      <main>
+        <div class="identity">
+          <h1>
+            <span class="sr-only">Oqen</span>
+            <svg class="wordmark" viewBox="0 0 670 218" fill="none" aria-hidden="true">
+              <circle cx="82" cy="91" r="63" />
+              <circle cx="250" cy="91" r="63" />
+              <path class="tail" d="M278 119 326 199" />
+              <path d="M477 133C465 147 448 154 426 154C390 154 363 127 363 91C363 55 390 28 426 28C462 28 489 55 489 91H365" />
+              <path d="M533 154V28M533 88C533 52 557 28 590 28C623 28 647 52 647 88V154" />
+            </svg>
+          </h1>
+          <div class="intro">
+            <p class="tagline">Small team. Strange worlds.</p>
+            <p class="description">An independent game studio making games<br class="desktop-break" /> worth getting lost in.</p>
+          </div>
+          <p class="status"><span class="status-dot" aria-hidden="true"></span> In the making.</p>
+        </div>
+      </main>
+
+      <footer>
+        <span>© {year} Oqen</span>
+        <span class="footer-note">A little off the beaten path.</span>
+        <span>oqen.org</span>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e9e7df;
+    background: #111210;
+    color-scheme: dark;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #c69a66; color: #111210; }
+
+  .page {
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    padding: 36px 48px 28px;
+  }
+
+  header, footer { display: flex; align-items: center; justify-content: space-between; }
+  header { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: #a4a69b; }
+  .studio-label { display: flex; align-items: center; gap: 12px; }
+  .symbol { color: #c69a66; font-size: 23px; line-height: 1; }
+  .edition { font-family: 'Courier New', monospace; font-size: 10px; }
+
+  main { display: grid; place-items: center; padding: 92px 0 100px; }
+  .identity { width: 100%; text-align: center; }
+  h1 { margin: 0 auto; width: min(100%, 570px); }
+  .wordmark { display: block; width: 100%; height: auto; overflow: visible; stroke: #e9e7df; stroke-width: 28; }
+  .tail { stroke: #c69a66; }
+  .intro { margin-top: 30px; }
+  p { margin: 0; }
+  .tagline { font-size: clamp(19px, 2.2vw, 25px); line-height: 1.4; letter-spacing: -0.035em; }
+  .description { margin-top: 14px; font-size: 14px; color: #a4a69b; line-height: 1.8; }
+  .status { display: inline-flex; align-items: center; gap: 9px; margin-top: 43px; font-family: 'Courier New', monospace; font-size: 11px; color: #a4a69b; }
+  .status-dot { width: 5px; height: 5px; border-radius: 50%; background: #c69a66; }
+
+  footer { gap: 24px; padding-top: 22px; border-top: 1px solid #292a25; color: #92958a; font-size: 10px; letter-spacing: 0.025em; }
+  .footer-note { color: #92958a; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (min-width: 1600px) {
+    h1 { width: 660px; }
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 26px 24px 24px; }
+    header { font-size: 8px; letter-spacing: 0.09em; }
+    .studio-label { gap: 8px; }
+    .symbol { font-size: 20px; }
+    .edition { font-size: 8px; }
+    main { padding: 88px 0; }
+    h1 { width: 100%; max-width: 400px; }
+    .intro { margin-top: 28px; }
+    .description { font-size: 13px; }
+    .status { margin-top: 32px; }
+    footer { gap: 12px; font-size: 9px; }
+    .footer-note { display: none; }
+  }
+
+  @media (max-width: 340px) {
+    .edition { display: none; }
+    .desktop-break { display: none; }
+  }
+</style>
